@@ -1,1 +1,15 @@
-
+services:
+  - type: web
+    name: trader-bot-pro
+    env: python
+    region: frankfurt
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: TELEGRAM_TOKEN
+        value: "8239945370:AAHgBmLRMj2_t3Vq1Cwi-iMqvSxMSaKiGhk"
+    plan: free
